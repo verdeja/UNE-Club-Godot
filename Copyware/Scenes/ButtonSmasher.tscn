@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scenes/ButtonSmasher.gd" type="Script" id=1]
+[ext_resource path="res://Assets/spacesprite.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "background"
+length = 3.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1, 1.9, 2.4, 2.6 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.456665, 0.843027, 0.90625, 1 ), Color( 1, 1, 1, 1 ), Color( 0.298004, 0.847656, 0.474065, 1 ), Color( 0.370123, 0.845552, 0.670513, 1 ), Color( 0.0878906, 0.28125, 0.224437, 1 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.2, 0.4, 0.7, 0.9, 1.1, 1.3, 1.6, 1.8, 1.9, 2, 2.5, 2.6 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( -20, -20 ), Vector2( -17.4825, -8.67111 ), Vector2( -14.9649, -27.5526 ), Vector2( -3.96524, -10.569 ), Vector2( -26.0034, -16.0301 ), Vector2( -35.5018, -1.30295 ), Vector2( -23.8, -8.30615 ), Vector2( -10.5417, -7.85223 ), Vector2( -4.34027, -4.55252 ), Vector2( -13.1978, -15.9099 ), Vector2( -28.9214, -1.17654 ), Vector2( 0.714571, -3.03564 ), Vector2( -18.5336, -31.6039 ) ] }
+
+[node name="mainButtonSmasher" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 23.0
+margin/top = 37.0
+margin/right = 63.0
+margin/bottom = 51.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -4.47009, -4.71898 )
+transform/scale = Vector2( 1.05, 1.05 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0.37486, 0.864335, 0.531646, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/background = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "background"
+
+
