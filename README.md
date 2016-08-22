@@ -1,4 +1,4 @@
-#Club De Desarrollo de Videojuegos Universidad Nueva Esparta (CDVUNE) 
+#Club De Desarrollo de Videojuegos Universidad de la Nueva Esparta (CDVUNE) 
 
 ###Repositorio del _CDVUNE_
 ---
